@@ -1,0 +1,344 @@
+<!-- filename: elegant_ocr_frontend.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MedScan — OCR Drug Detector</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa6bf;
+      --accent: #4f46e5; /* indigo */
+      --accent-2: #06b6d4; /* teal */
+      --glass: rgba(255,255,255,0.04);
+      --success: #10b981;
+      --danger: #ef4444;
+      --radius: 14px;
+      --glass-border: rgba(255,255,255,0.06);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0}
+    body{
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(79,70,229,0.12), transparent),
+                  radial-gradient(900px 500px at 90% 90%, rgba(6,182,212,0.07), transparent),
+                  var(--bg);
+      color: #e6eef8;
+      -webkit-font-smoothing:antialiased;
+      padding:32px;
+    }
+
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 520px 1fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    header{
+      grid-column:1/-1;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:6px;
+    }
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;font-weight:700;font-family:Rubik;font-size:18px;
+      box-shadow: 0 6px 18px rgba(8,12,20,0.6);
+    }
+    h1{font-family:Rubik;margin:0;font-size:20px}
+    p.lead{margin:0;color:var(--muted);font-size:14px}
+
+    /* left panel */
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      padding:20px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      transition:transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s;
+    }
+    .card:hover{transform: translateY(-6px);box-shadow: 0 18px 50px rgba(2,6,23,0.75)}
+
+    .uploader{
+      display:flex;flex-direction:column;gap:12px;align-items:center;
+      padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+      border:1px dashed rgba(255,255,255,0.04);
+    }
+
+    .file-input{
+      display:flex;gap:12px;align-items:center;width:100%;
+    }
+    .file-input input[type=file]{display:none}
+    .btn{
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      padding:10px 14px;border-radius:10px;border:0;color:white;font-weight:600;cursor:pointer;box-shadow:0 8px 20px rgba(79,70,229,0.14);
+      transition: transform .18s, opacity .18s;
+    }
+    .btn:active{transform:translateY(1px)}
+
+    .secondary{
+      background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 12px;border-radius:10px;color:var(--muted);cursor:pointer
+    }
+
+    /* preview & camera area */
+    .preview{
+      width:100%;height:320px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,0.03)
+    }
+    .preview img, .preview video{max-width:100%;max-height:100%;object-fit:contain}
+
+    .controls{display:flex;gap:10px;justify-content:center;margin-top:12px}
+
+    /* result panel */
+    .result-wrap{display:flex;flex-direction:column;gap:12px}
+    .result-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);min-height:140px;transition:transform .3s,opacity .3s;opacity:0;transform:translateY(14px)}
+    .result-card.visible{opacity:1;transform:none}
+
+    .title-row{display:flex;align-items:center;justify-content:space-between}
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:600}
+
+    .list{margin:10px 0 0 16px}
+    .muted{color:var(--muted);font-size:13px}
+
+    /* spinner overlay */
+    .overlay{
+      position:fixed;left:0;top:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(rgba(2,6,23,0.6), rgba(2,6,23,0.6));backdrop-filter:blur(4px);z-index:9999;opacity:0;pointer-events:none;transition:opacity .18s
+    }
+    .overlay.show{opacity:1;pointer-events:auto}
+    .spinner{
+      width:120px;height:120px;border-radius:18px;background:linear-gradient(180deg,#071123, #07122a);display:flex;align-items:center;justify-content:center;flex-direction:column;padding:14px;border:1px solid rgba(255,255,255,0.04)
+    }
+    .dots{display:flex;gap:8px;margin-top:10px}
+    .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);animation:pop 1s infinite}
+    .dot:nth-child(2){animation-delay:.12s}
+    .dot:nth-child(3){animation-delay:.24s}
+    @keyframes pop{0%{transform:translateY(0);opacity:.3}50%{transform:translateY(-10px);opacity:1}100%{transform:translateY(0);opacity:.3}}
+
+    /* small screens */
+    @media (max-width:880px){
+      .wrap{grid-template-columns:1fr; padding:20px}
+      .preview{height:260px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">AS</div>
+      <div>
+        <h1>AroShield</h1>
+      </div>
+    </header>
+
+    <!-- LEFT: Upload + Camera + Preview -->
+    <section class="card">
+      <div class="uploader">
+
+        <div class="file-input" style="width:100%">
+          <label class="btn" for="fileInput">Choose Image</label>
+          <input id="fileInput" type="file" accept="image/*">
+          <button id="uploadBtn" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)">Send</button>
+        </div>
+
+        <div class="preview" id="preview">
+          <div id="placeholder" style="text-align:center;color:var(--muted)">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h4l2-3h4l2 3h4v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7z" stroke="rgba(255,255,255,0.14)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div style="margin-top:8px">No image selected</div>
+            <div class="muted" style="font-size:12px;margin-top:8px">You can also use camera below</div>
+          </div>
+          <video id="video" style="display:none" autoplay muted playsinline></video>
+          <img id="previewImg" style="display:none" alt="preview">
+        </div>
+
+        <div class="controls">
+          <button id="startCam" class="secondary">Start Camera</button>
+          <button id="capture" class="secondary" disabled>Capture</button>
+          <button id="stopCam" class="secondary" disabled>Stop Camera</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RIGHT: Results -->
+    <aside class="result-wrap">
+      <div class="result-card card" id="resultCard">
+        <div class="title-row">
+          <div>
+            <div style="font-size:13px;color:var(--muted)">MEDICINE DETAILS</div>
+            <h2 id="drugName" style="margin:6px 0 0 0;font-size:18px">—</h2>
+          </div>
+          <div class="pill">Status: <strong id="statusText" style="margin-left:8px;color:var(--accent)">Ready</strong></div>
+        </div>
+
+        <div id="details" style="margin-top:12px;color:var(--muted);font-size:14px">
+          <div><strong>Salt Composition:</strong> <span id="salt">—</span></div>
+          <div style="margin-top:8px"><strong>Description:</strong>
+            <div id="desc" class="list muted">—</div>
+          </div>
+          <div style="margin-top:8px"><strong>Side Effects:</strong>
+            <div id="effects" class="list muted">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px;align-items:center;justify-content:flex-end">
+        <small class="muted">Tip: hold steady and ensure label is well-lit for best OCR results.</small>
+      </div>
+    </aside>
+  </div>
+
+  <!-- processing overlay -->
+  <div class="overlay" id="overlay">
+    <div class="spinner">
+      <div style="font-weight:700;color:var(--accent);font-family:Rubik">Processing...</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:6px">Uploading image & running OCR</div>
+      <div class="dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Backend URL (change if your backend host/port differ)
+    const BACKEND = 'http://127.0.0.1:8000/ocr/';
+
+    const fileInput = document.getElementById('fileInput');
+    const uploadBtn = document.getElementById('uploadBtn');
+    const previewImg = document.getElementById('previewImg');
+    const placeholder = document.getElementById('placeholder');
+    const overlay = document.getElementById('overlay');
+    const resultCard = document.getElementById('resultCard');
+    const drugName = document.getElementById('drugName');
+    const salt = document.getElementById('salt');
+    const desc = document.getElementById('desc');
+    const effects = document.getElementById('effects');
+    const statusText = document.getElementById('statusText');
+
+    // camera elements
+    const startCam = document.getElementById('startCam');
+    const stopCam = document.getElementById('stopCam');
+    const captureBtn = document.getElementById('capture');
+    const video = document.getElementById('video');
+    let stream = null;
+
+    // helpers
+    function showOverlay(show=true){
+      if(show) overlay.classList.add('show'); else overlay.classList.remove('show');
+    }
+
+    function humanizeStatus(text, colorVar='--accent'){
+      statusText.textContent = text;
+      statusText.style.color = getComputedStyle(document.documentElement).getPropertyValue(colorVar);
+    }
+
+    function resetResult(){
+      drugName.textContent = '—'; salt.textContent = '—'; desc.innerHTML='—'; effects.innerHTML='—'; resultCard.classList.remove('visible');
+      humanizeStatus('Ready','--accent');
+    }
+
+    // show preview image
+    fileInput.addEventListener('change', e=>{
+      const f = e.target.files && e.target.files[0];
+      if(!f) return resetPreview();
+      const url = URL.createObjectURL(f);
+      previewImg.src = url; previewImg.style.display='block'; video.style.display='none'; placeholder.style.display='none';
+    });
+
+    function resetPreview(){
+      previewImg.src=''; previewImg.style.display='none'; video.style.display='none'; placeholder.style.display='block';
+    }
+
+    // upload handler
+    uploadBtn.addEventListener('click', async ()=>{
+      const file = fileInput.files && fileInput.files[0];
+      if(!file){ alert('Please choose an image first'); return; }
+
+      showOverlay(true); humanizeStatus('Processing...','--accent-2');
+      try{
+        const form = new FormData(); form.append('file', file);
+        const resp = await fetch(BACKEND, { method:'POST', body: form });
+        const data = await resp.json();
+        renderResult(data);
+      }catch(err){
+        alert('Error: ' + err);
+      }finally{ showOverlay(false); }
+    });
+
+    // camera controls
+    startCam.addEventListener('click', async ()=>{
+      try{
+        stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode:'environment' }, audio:false });
+        video.srcObject = stream; video.style.display='block'; previewImg.style.display='none'; placeholder.style.display='none';
+        startCam.disabled = true; stopCam.disabled = false; captureBtn.disabled = false;
+      }catch(err){ alert('Cannot access camera: ' + err); }
+    });
+    stopCam.addEventListener('click', ()=>{
+      if(stream){ stream.getTracks().forEach(t=>t.stop()); stream=null; }
+      video.style.display='none'; startCam.disabled=false; stopCam.disabled=true; captureBtn.disabled=true; resetPreview();
+    });
+
+    // capture from camera and send
+    captureBtn.addEventListener('click', ()=>{
+      if(!stream){ alert('Start the camera first'); return; }
+      const canvas = document.createElement('canvas'); canvas.width = video.videoWidth; canvas.height = video.videoHeight;
+      const ctx = canvas.getContext('2d'); ctx.drawImage(video,0,0,canvas.width,canvas.height);
+      canvas.toBlob(async blob=>{
+        showOverlay(true); humanizeStatus('Processing...','--accent-2');
+        try{
+          const form = new FormData(); form.append('file', blob, 'capture.jpg');
+          const resp = await fetch(BACKEND, { method:'POST', body: form });
+          const data = await resp.json(); renderResult(data);
+        }catch(err){ alert('Error: ' + err); }
+        finally{ showOverlay(false); }
+      }, 'image/jpeg', 0.92);
+    });
+
+    // render data returned from backend
+    function renderResult(data){
+      if(data.error){ alert('Server error: ' + data.error); resetResult(); return; }
+
+      if(data.matched_drug === 'No match found'){
+        drugName.textContent = 'No match found'; salt.textContent='—'; desc.innerHTML='—'; effects.innerHTML='—';
+        humanizeStatus('No Match','--danger'); resultCard.classList.add('visible'); return;
+      }
+
+      const drug = data.matched_drug || data;
+      // handle if backend returned nested object
+      const name = drug.product_name || drug.name || '—';
+      drugName.textContent = name;
+      salt.textContent = drug.salt_composition || '—';
+
+      // split description into sentence points
+      const description = drug.description || '';
+      const points = description.split(/\.|\n/).map(s=>s.trim()).filter(Boolean);
+      if(points.length){
+        desc.innerHTML = '<ul>' + points.map(p=>`<li>${escapeHtml(p)}.</li>`).join('') + '</ul>';
+      } else { desc.innerHTML = '—'; }
+
+      // split side effects by commas or semicolons
+      const se = drug.side_effects || '';
+      const seList = se.split(/[;,]/).map(s=>s.trim()).filter(Boolean);
+      if(seList.length) effects.innerHTML = '<ul>' + seList.map(s=>`<li>${escapeHtml(s)}</li>`).join('') + '</ul>'; else effects.innerHTML='—';
+
+      humanizeStatus('Success','--success'); resultCard.classList.add('visible');
+    }
+
+    function escapeHtml(unsafe){ return unsafe.replace(/[&<>"']/g, function(m){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]; }); }
+
+    // init
+    resetResult();
+  </script>
+</body>
+</html>

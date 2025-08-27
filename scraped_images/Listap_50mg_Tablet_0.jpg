@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Error Exception</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="https://ecommerce.genericartmedicine.com/resources/css/remixicon.css">
+    <link rel="stylesheet" type="text/css" href="https://ecommerce.genericartmedicine.com/resources/css/bootstrap.min.css">
+
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="https://ecommerce.genericartmedicine.com/resources/css/ecom.css" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KPERK5QDVR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-KPERK5QDVR');
+    </script>
+
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 6446943, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+</head>
+<body><div class="bg-white h-100">
+<div class="container container-full-width pt-5">
+<div class="row">
+<div class="col-12 text-center py-4">
+<img class="img-fluid" src="https://ecommerce.genericartmedicine.com/images/404-error.jpg" alt="404 Error" />
+<h4 class="font-md-2 font-bold text-danger mb-1">Oops.. You just found an error page..</h2>
+<p class="lead">
+Coming Soon!</p>
+<a class="btn btn-primary site-btn" href="https://ecommerce.genericartmedicine.com">Back to Homepage</a>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

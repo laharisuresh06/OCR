@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+		<meta name="description" content="GNH India’s global Points of Presence ensure seamless pharmaceutical distribution and support across multiple countries, providing localized service and compliance.">
+		<meta name="keywords" content="GNH India global presence, pharmaceutical distribution locations, pharma regional offices, international pharma support, local pharma service centers">
+		<meta name="author" content="GNH India Pharmaceuticals Limited">
+		<!-- Canonical URL -->
+        <link rel="canonical" href="https://www.gnhindia.com/404/" />
+		<base href="/">
+		<!-- Page Title -->
+		<title>Page Not Found – GNH India</title>
+		<!-- Favicon Icon -->
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+		<!-- Google Fonts Css-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+		<!-- Bootstrap Css -->
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<!-- SlickNav Css -->
+		<link href="css/slicknav.min.css" rel="stylesheet">
+		<!-- Swiper Css -->
+		<link rel="stylesheet" href="css/swiper-bundle.min.css">
+		<!-- Font Awesome Icon Css-->
+		<link href="css/all.min.css" rel="stylesheet" media="screen">
+		<!-- Animated Css -->
+		<link href="css/animate.css" rel="stylesheet">
+		<!-- Magnific Popup Core Css File -->
+		<link rel="stylesheet" href="css/magnific-popup.css">
+		<!-- Mouse Cursor Css File -->
+		<link rel="stylesheet" href="css/mousecursor.css">
+		<!-- Main Custom Css -->
+		<link href="css/custom.css" rel="stylesheet" media="screen">
+		<!-- Page Focused Css -->
+
+	</head>
+	<body>
+		<!-- Topbar Section Start -->
+		<div class="topbar">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6 col-md-9">
+						<!-- Topbar Contact Information Start -->
+						<div class="topbar-contact-info">
+							<ul>
+								<li><a href="#"><i class="fa-solid fa-clock"></i> <span>Working Hour:</span> 09:30am to 05:30pm IST</a></li>
+								<li>
+									<a href="/cdn-cgi/l/email-protection#23544641504a574663444d4b4a4d474a420d404c4e">
+									<i class="fa-solid fa-envelope"></i>
+									<span>Email:</span> <span class="__cf_email__" data-cfemail="c9beacabbaa0bdac89aea7a1a0a7ada0a8e7aaa6a4">[email&#160;protected]</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- Topbar Contact Information End -->
+					</div>
+					<div class="col-lg-6 col-md-3">
+						<!-- Topbar Social Details Start -->
+						<div class="topbar-social-details">
+							<!-- Header Social Icons Start -->
+							<div class="topbar-social-icons">
+								<ul>
+									<li><a href="https://www.facebook.com/gnhipl" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+									<li><a href="https://www.linkedin.com/company/gnh-pharmaceuticals-limited" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+									<li><a href="https://www.instagram.com/gnhindia/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+									<li><a href="https://www.x.com/GNHIPL" target="_blank" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a></li>
+									<li><a href="https://www.youtube.com/@gnhindia" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+								</ul>
+							</div>
+							<!-- Header Social Icons End -->
+							<!-- Topbar Contact Details Start -->
+							<div class="topbar-contact-info topbar-contact-details">
+								<ul>
+									<li>
+										<a href="tel:+912262706900">
+										<span>Contact:</span> +91 22 6270 6900
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- Topbar Contact Details End -->
+						</div>
+						<!-- Topbar Social Details End -->                  
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Topbar Section End -->
+		<!-- Header Start -->
+		<header class="main-header">
+			<div class="header-sticky">
+				<nav class="navbar navbar-expand-lg">
+					<div class="container">
+						<!-- Logo Start -->
+						<a class="navbar-brand" href="index/">
+						<img src="images/logo.svg" alt="Logo">
+						</a>
+						<!-- Logo End -->
+						<!-- Mobile Cart Icon -->
+						<div class="d-flex align-items-center d-lg-none me-4 ms-auto">
+							<a href="cart/" class="position-relative text-decoration-none">
+							<i class="fa fa-shopping-cart fs-3"></i>
+							<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count-mobile">
+							0
+							</span>
+							</a>
+						</div>
+						<!-- Navbar Toggle (Mobile) -->
+						<div class="navbar-toggle"></div>
+						<!-- Main Menu Start -->
+						<div class="collapse navbar-collapse main-menu">
+							<div class="nav-menu-wrapper">
+								<ul class="navbar-nav mr-auto" id="menu">
+									<li class="nav-item"><a class="nav-link" href="index/">Home</a></li>
+									<li class="nav-item"><a class="nav-link" href="about-gnh/">About Us</a></li>
+									<li class="nav-item submenu">
+										<a class="nav-link" href="javascript:void(0)">Products</a>
+										<ul>
+											<li class="nav-item"><a class="nav-link" href="product-list/general/">General Medicines</a></li>
+											<li class="nav-item"><a class="nav-link" href="product-list/us-ndc/">US NDC</a></li>
+											<li class="nav-item"><a class="nav-link" href="product-list/canada-drug-din/">Canadian DIN</a></li>
+											<li class="nav-item"><a class="nav-link" href="product-list/swiss-drugs/">Swiss Drugs</a></li>
+											<li class="nav-item"><a class="nav-link" href="product-list/nz-drugs/">NZ Drugs</a></li>
+											<li class="nav-item"><a class="nav-link" href="product-list/gnh-brands/">GNH Brands</a></li>
+										</ul>
+									</li>
+									<li class="nav-item submenu">
+										<a class="nav-link" href="javascript:void(0)">Services</a>
+										<ul>
+											<li class="nav-item"><a class="nav-link" href="services/named-patient-supply/">Named Patient Supply</a></li>
+											<li class="nav-item"><a class="nav-link" href="services/clinical-trials-supply/">Clinical Trials Supply</a></li>
+											<li class="nav-item"><a class="nav-link" href="services/pharmaceutical-wholesaling/">Pharmaceutical Wholesaling</a></li>
+											<li class="nav-item"><a class="nav-link" href="services/pharmaceutical-contract-manufacturing/">Contract Manufacturing</a></li>
+											<li class="nav-item"><a class="nav-link" href="services/government-supply-services/">Government Supply Services</a></li>
+											<li class="nav-item"><a class="nav-link" href="services/dossiers-and-stability-studies/">Dossiers & Stability Studies</a></li>
+										</ul>
+									</li>
+									<li class="nav-item"><a class="nav-link" href="jobs-at-gnh-india-pharmaceuticals-limited/">Careers</a></li>
+									<li class="nav-item"><a class="nav-link" href="contact-us/">Contact Us</a></li>
+									<li class="nav-item highlighted-menu"><a class="nav-link" href="https://booksltd.gnhindia.com/portal/gnhindiapharmaltd/signin">Login</a></li>
+								</ul>
+							</div>
+							<!-- Header Button Start -->
+							<div class="header-btn d-flex align-items-center">
+								<a href="cart/" class="position-relative me-3 text-decoration-none">
+								<i class="fa fa-shopping-cart fs-4"></i>
+								<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">
+								0
+								</span>
+								</a>
+								<a href="https://booksltd.gnhindia.com/portal/gnhindiapharmaltd/signin" target="_blank" class="btn-default ms-2">My Account</a>
+							</div>
+							<!-- Header Button End -->
+						</div>
+						<!-- Main Menu End -->
+					</div>
+				</nav>
+				<div class="responsive-menu"></div>
+			</div>
+		</header>
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///MAIN CONTENT///////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+
+
+    <!-- error section start -->
+    <div class="error-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="error-page-content">
+                        <div class="section-title">
+                            <h2 class="text-anime-style-3" data-cursor="-opaque">Oops! Page not found</h2>
+                        </div>
+                        <div class="error-page-content-body">
+                            <p class="wow fadeInUp" data-wow-delay="0.25s">Looks like the page you’re trying to reach isn’t here anymore — or maybe the link’s just a little off. <br> No worries, let’s get you back on track</p>
+                            <a class="btn-default wow fadeInUp" data-wow-delay="0.5s" href="product-list/"><span>Find Medicine</span></a>
+							<a class="btn-default wow fadeInUp" data-wow-delay="0.5s" href="index/"><span>back to home</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- error section end -->
+
+
+
+
+
+
+
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///MAIN CONTENT END///////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////////////// -->
+		<!-- Footer Start -->
+		<footer class="main-footer bg-section">
+			<div class="container">
+				<div class="row" id="footer-menu-columns">
+					<!-- Menu columns will be injected by JavaScript -->
+					<!-- Contact column is static below -->
+					<div class="col-lg-4 col-md-6 col-12">
+						<div class="footer-contact-box footer-links">
+							<h3>Contact Us</h3>
+							<!-- Email -->
+							<div class="footer-contact-item">
+								<div class="icon-box">
+									<img src="images/icon-mail.svg" alt="Email Icon">
+								</div>
+								<div class="footer-contact-content">
+									<p><a href="/cdn-cgi/l/email-protection#b4c3d1d6c7ddc0d1f4d3dadcdddad0ddd59ad7dbd9" style="text-decoration:none; color:inherit;"><span class="__cf_email__" data-cfemail="75021017061c011035121b1d1c1b111c145b161a18">[email&#160;protected]</span></a></p>
+								</div>
+							</div>
+							<!-- Phone -->
+							<div class="footer-contact-item">
+								<div class="icon-box">
+									<img src="images/icon-phone.svg" alt="Phone Icon">
+								</div>
+								<div class="footer-contact-content">
+									<p><a href="tel:+912262706900" style="text-decoration:none; color:inherit;">+91 22 6270 6900</a></p>
+								</div>
+							</div>
+							<!-- India Office -->
+							<div class="footer-contact-item">
+								<div class="icon-box">
+									<img src="images/icon-location.svg" alt="Location Icon">
+								</div>
+								<div class="footer-contact-content">
+									<p><strong>Registered Office (India):</strong><br>
+										Unit # G-14, 15, 16, 17, Ground Floor,<br>
+										Prabhadevi Industrial Estate,<br>
+										Enterprises Industrial Premises,<br>
+										408, Veer Sawarkar Road, Prabhadevi,<br>
+										Mumbai 400025, India
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Social Media Section -->
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="footer-social-link">
+							<hr>
+							<ul>
+								<li><a href="https://www.facebook.com/gnhipl" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+								<li><a href="https://www.linkedin.com/company/gnh-pharmaceuticals-limited" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+								<li><a href="https://www.instagram.com/gnhindia/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+								<li><a href="https://www.x.com/GNHIPL" target="_blank" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a></li>
+								<li><a href="https://www.youtube.com/@gnhindia" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+							</ul>
+							<hr>
+						</div>
+					</div>
+				</div>
+				<!-- Footer Bottom -->
+				<div class="footer-copyright">
+					<div class="row align-items-center">
+						<div class="col-md-8">
+							<div class="footer-copyright-text">
+								<p>Copyright © 2025 GNH India Pharmaceuticals Limited. All Rights Reserved.
+									<br> Disclaimer: Product names, logos, brands and other trademarks featured or referred to are the property of their respective trademark holders. Please read Legal Notice for further details.
+								</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="footer-terms-condition">
+								<ul>
+									<li><a href="privacy-policy/">Privacy Policy</a></li>
+									<li><a href="terms-conditions/">Terms & Conditions</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- Footer End -->
+		<!-- Jquery Library File -->
+		<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery-3.7.1.min.js"></script>
+		<!-- Bootstrap js file -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- Validator js file -->
+		<script src="js/validator.min.js"></script>
+		<!-- SlickNav js file -->
+		<script src="js/jquery.slicknav.js"></script>
+		<!-- Swiper js file -->
+		<script src="js/swiper-bundle.min.js"></script>
+		<!-- Counter js file -->
+		<script src="js/jquery.waypoints.min.js"></script>
+		<script src="js/jquery.counterup.min.js"></script>
+		<!-- Isotop js file -->
+		<script src="js/isotope.min.js"></script>
+		<!-- Magnific js file -->
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<!-- SmoothScroll -->
+		<script src="js/SmoothScroll.js"></script>
+		<!-- Parallax js -->
+		<script src="js/parallaxie.js"></script>
+		<!-- MagicCursor js file -->
+		<script src="js/gsap.min.js"></script>
+		<script src="js/magiccursor.js"></script>
+		<!-- Text Effect js file -->
+		<script src="js/SplitText.js"></script>
+		<script src="js/ScrollTrigger.min.js"></script>
+		<!-- YTPlayer js File -->
+		<script src="js/jquery.mb.YTPlayer.min.js"></script>
+		<!-- Wow js file -->
+		<script src="js/wow.min.js"></script>
+		<!-- Main Custom js file -->
+		<script src="js/function.js"></script>
+		<script src="js/footer.js"></script>
+		<script src="js/shimmer.js"></script>
+		<script src="js/seohelper.js"></script>
+		<script src="js/auth.js"></script>
+		<script src="js/cart.js"></script>
+		<script src="js/misc.js"></script>  
+		<script src="js/cookie.js"></script>
+	</body>
+</html>
